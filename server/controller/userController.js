@@ -63,12 +63,12 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     facebookURL,
     linkedInURL,
     avatar: {
-      public_id: cloudinaryResponse.public_id, // Set your cloudinary public_id here
-      url: cloudinaryResponse.secure_url, // Set your cloudinary secure_url here
+      public_id: cloudinaryResponseForAvatar.public_id,
+      url: cloudinaryResponseForAvatar.secure_url,// Set your cloudinary secure_url here
     },
     resume: {
-      public_id: cloudinaryResponse.public_id, // Set your cloudinary public_id here
-      url: cloudinaryResponse.secure_url, // Set your cloudinary secure_url here
+      public_id: cloudinaryResponseForResume.public_id,
+    url: cloudinaryResponseForResume.secure_url,
     },
   });
   generateToken(user, "Registered!", 201, res);
@@ -193,7 +193,7 @@ export const updatePassword = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const getUserForPortfolio = catchAsyncErrors(async (req, res, next) => {
-  const id = "663296a896e553748ab5b0be";
+  const id = "67f78efc97dc82900b5d4a53";
   const user = await User.findById(id);
   res.status(200).json({
     success: true,
