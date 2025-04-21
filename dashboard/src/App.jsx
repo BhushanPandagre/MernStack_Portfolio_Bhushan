@@ -7,30 +7,30 @@ import HomePage from "./pages/HomePage";
 import ManageSkills from "./pages/ManageSkills";
 import ManageProjects from "./pages/ManageProjects";
 import UpdateProject from "./pages/UpdateProject";
-// import { useDispatch } from "react-redux";
-// import { useEffect } from "react";
-// import { getUser } from "./store/slices/userSlice";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getUser } from "./store/slices/userSlice";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-// import { getAllSkills } from "./store/slices/skillSlice";
-// import { getAllSoftwareApplications } from "./store/slices/softwareApplicationSlice";
-// import { getAllTimeline } from "./store/slices/timelineSlice";
-// import { getAllMessages } from "./store/slices/messageSlice";
+import { getAllSkills } from "./store/slices/skillSlice";
+import { getAllSoftwareApplications } from "./store/slices/softwareApplicationSlice";
+import { getAllTimeline } from "./store/slices/timelineSlice";
+import { getAllMessages } from "./store/slices/messageSlice";
 import ManageTimeline from "./pages/ManageTimeline";
-// import { getAllProjects } from "./store/slices/projectSlice";
+import { getAllProjects } from "./store/slices/projectSlice";
 import ViewProject from "./pages/ViewProject";
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getUser());
-  //   dispatch(getAllSkills());
-  //   dispatch(getAllSoftwareApplications());
-  //   dispatch(getAllTimeline());
-  //   dispatch(getAllMessages());
-  //   dispatch(getAllProjects());
-  // }, []);
+  useEffect(() => {
+    dispatch(getUser());
+    dispatch(getAllSkills());
+    dispatch(getAllSoftwareApplications());
+    dispatch(getAllTimeline());
+    dispatch(getAllMessages());
+    dispatch(getAllProjects());
+  }, []);
   return (
     <Router>
       <Routes>
